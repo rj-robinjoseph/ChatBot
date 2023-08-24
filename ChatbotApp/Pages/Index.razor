@@ -5,6 +5,8 @@
 
 <PageTitle>Chatbot</PageTitle>
 
+
+
 <div class="container">
     <div class="row">
         <div class="logo"></div>
@@ -38,6 +40,7 @@
     private List<QAPair> qaPairs = new List<QAPair>();
     private List<PAns> pAns = new List<PAns>();
     private List<ChatMessage> chatMessages = new List<ChatMessage>();
+
     private ElementReference messagesContainer;
 
     private List<string> predefinedQuestions = new List<string> { "Admission Open", "All Courses", "Hostel", "Campuses", "Application Status" };
@@ -65,8 +68,8 @@
     {
         if (!string.IsNullOrWhiteSpace(userInput))
         {
-            var qaPair = qaPairs.FirstOrDefault(qa => qa.Question.Equals(userInput, StringComparison.OrdinalIgnoreCase));
-            if (qaPair != null)
+            string cleanedUserInput = userInput.TrimEnd('?');
+            var qaPair = qaPairs.FirstOrDefault(qa => qa.Question.Equals(cleanedUserInput, StringComparison.OrdinalIgnoreCase)); if (qaPair != null)
             {
                 chatMessages.Add(new ChatMessage(userInput, qaPair.Answer));
             }
@@ -103,6 +106,7 @@
         if (e.Key == "Enter")
         {
             await FetchAnswer();
+            await ScrollToBottom();
         }
     }
 
