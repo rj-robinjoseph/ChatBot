@@ -1,0 +1,51 @@
+Hello|Hi There!
+What is your name?|I'm a chatbot, I don't have a name.
+How are you?|I'm just a program, but I'm here to assist you.
+What's the weather like today?|I don't have access to real-time data, but I can help you find weather websites.
+What is the capital of France?|The capital of France is Paris.
+Tell me a joke.|Sure! Why don't scientists trust atoms? Because they make up everything!
+Can you help me with math homework?|Of course, I'll do my best to help. What's the problem?
+What's the meaning of life?|The meaning of life is a philosophical question that doesn't have a single answer.
+How do I cook pasta?|Boil water, add pasta, cook until al dente, then drain and add sauce.
+What's the largest planet in the solar system?|Jupiter is the largest planet in our solar system.
+How do I change a tire?|First, find a safe location, then follow these steps...
+Tell me about yourself.|I'm a chatbot designed to provide information and assistance.
+How does photosynthesis work?|Photosynthesis is the process by which plants convert sunlight into energy...
+Exit|Goodbye! Have a great day!
+What's 2 + 2?|2 + 2 equals 4.
+What's the square root of 25?|The square root of 25 is 5.
+What's the capital of Japan?|The capital of Japan is Tokyo.
+How many continents are there?|There are seven continents on Earth.
+How long does it take for the Earth to orbit the Sun?|It takes about 365.25 days for Earth to orbit the Sun.
+What's the freezing point of water in Fahrenheit?|The freezing point of water in Fahrenheit is 32 degrees.
+Who painted the Mona Lisa?|The Mona Lisa was painted by Leonardo da Vinci.
+What's the currency of Germany?|The currency of Germany is the Euro.
+What's the chemical symbol for gold?|The chemical symbol for gold is Au.
+How many bones are in the adult human body?|There are 206 bones in the adult human body.
+What's the national flower of Japan?|The national flower of Japan is the cherry blossom.
+Calculate 8 * 6.|8 multiplied by 6 equals 48.
+What's the tallest mountain in the world?|Mount Everest is the tallest mountain on Earth.
+How do I make a paper airplane?|Fold the paper in half, then fold the top corners to the center, fold in half again, and create wings.
+What's the largest ocean in the world?|The largest ocean in the world is the Pacific Ocean.
+What's the formula for the area of a rectangle?|The formula for the area of a rectangle is length × width.
+Who wrote "Pride and Prejudice"?|Jane Austen wrote "Pride and Prejudice."
+What's the chemical symbol for water?|The chemical symbol for water is H2O.
+What's the main ingredient in guacamole?|The main ingredient in guacamole is avocado.
+How many colors are there in a rainbow?|There are seven colors in a rainbow: red, orange, yellow, green, blue, indigo, and violet.
+What's the speed of light?|The speed of light in a vacuum is approximately 299,792,458 meters per second.
+What's the largest mammal in the world?|The blue whale is the largest mammal on Earth.
+What's the tallest tree species?|The tallest tree species is the coast redwood.
+How do I make a grilled cheese sandwich?|Spread butter on bread slices, add cheese between slices, and grill until golden brown.
+What's the capital of Australia?|The capital of Australia is Canberra.
+Calculate 15 ÷ 3.|15 divided by 3 equals 5.
+What's the smallest prime number?|The smallest prime number is 2.
+Who wrote "Romeo and Juliet"?|William Shakespeare wrote "Romeo and Juliet."
+What's the distance from the Earth to the Moon?|The distance from the Earth to the Moon varies, but it's approximately 384,400 kilometers.
+What's the chemical symbol for oxygen?|The chemical symbol for oxygen is O.
+How do plants perform photosynthesis?|Plants perform photosynthesis by capturing sunlight, carbon dioxide, and water to produce glucose and oxygen.
+What's the boiling point of water in Celsius?|The boiling point of water in Celsius is 100 degrees.
+What's the national animal of China?|The national animal of China is the giant panda.
+Who developed the theory of relativity?|Albert Einstein developed the theory of relativity.
+What's the largest desert in the world?|The largest desert in the world is the Antarctic Desert.
+What's the main ingredient in chocolate?|The main ingredient in chocolate is cocoa.
+What's the highest waterfall in the world?|Angel Falls in Venezuela is the highest waterfall on Earth.

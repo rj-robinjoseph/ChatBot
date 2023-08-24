@@ -1,0 +1,148 @@
+﻿@page "/"
+@using Newtonsoft.Json;
+@using System.Text;
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Chatbot</PageTitle>
+
+<div class="container">
+    <div class="row">
+        <div class="logo"></div>
+        <div class="col-4">
+            <div class="messages" @ref="messagesContainer">
+                @foreach (var chatMessage in chatMessages)
+                {
+                    <div class="question">@chatMessage.Question</div>
+                    <div class="response">@chatMessage.Answer</div>
+                }
+                
+            </div>
+            <div class="predefinedQuestions">
+                @foreach (var predefinedQuestion in predefinedQuestions)
+                {
+                    <div class="predefined-question" @onclick="() => FetchPredefinedAnswer(predefinedQuestion)">@predefinedQuestion</div>
+                }
+            </div>
+            <div class="textMessage">
+                <input @bind="userInput" @onkeyup="HandleKeyPress" placeholder="Type your question here!" />
+                <button @onclick="FetchAnswer">Get Answer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string userInput = "";
+    private string answer = "";
+
+    private List<QAPair> qaPairs = new List<QAPair>();
+    private List<PAns> pAns = new List<PAns>();
+    private List<ChatMessage> chatMessages = new List<ChatMessage>();
+    private ElementReference messagesContainer;
+
+    private List<string> predefinedQuestions = new List<string> { "Admission Open", "All Courses", "Hostel", "Campuses", "Application Status" };
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        string filePath = "qa.txt";
+        var lines = await File.ReadAllLinesAsync(filePath);
+
+        foreach (var line in lines)
+        {
+            var parts = line.Split('|');
+            if (parts.Length == 2)
+            {
+                qaPairs.Add(new QAPair(parts[0], parts[1]));
+            }
+        }
+    }
+
+
+
+    private async Task FetchAnswer()
+    {
+        if (!string.IsNullOrWhiteSpace(userInput))
+        {
+            var qaPair = qaPairs.FirstOrDefault(qa => qa.Question.Equals(userInput, StringComparison.OrdinalIgnoreCase));
+            if (qaPair != null)
+            {
+                chatMessages.Add(new ChatMessage(userInput, qaPair.Answer));
+            }
+            else
+            {
+                chatMessages.Add(new ChatMessage(userInput, "Sorry, I don't have an answer for that question."));
+                await ScrollToBottom();
+            }
+
+            userInput = "";
+        }
+    }
+
+    private async Task FetchPredefinedAnswer(string question)
+    {
+        string predefinedAnswerFile = "predefinedQA.txt";
+        var pLines = await File.ReadAllLinesAsync(predefinedAnswerFile);
+
+        // Find the answer for the selected predefined question
+        var pAn = pLines.FirstOrDefault(line => line.StartsWith(question + "|"));
+        if (pAn != null)
+        {
+            var parts = pAn.Split('|');
+            if (parts.Length == 2)
+            {
+                chatMessages.Add(new ChatMessage(parts[0], parts[1]));
+                await ScrollToBottom();
+            }
+        }
+    }
+
+    private async Task HandleKeyPress(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await FetchAnswer();
+        }
+    }
+
+    private async Task ScrollToBottom()
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToBottom");
+    }
+
+    public class QAPair
+    {
+        public string Question { get; set; }
+        public string Answer { get; set; }
+
+        public QAPair(string question, string answer)
+        {
+            Question = question;
+            Answer = answer;
+        }
+    }
+    public class PAns
+    {
+        public string Question { get; set; }
+        public string Answer { get; set; }
+
+        public PAns(string question, string answer)
+        {
+            Question = question;
+            Answer = answer;
+        }
+    }
+
+    public class ChatMessage
+    {
+        public string Question { get; set; }
+        public string Answer { get; set; }
+
+        public ChatMessage(string question, string answer)
+        {
+            Question = question;
+            Answer = answer;
+        }
+    }
+}

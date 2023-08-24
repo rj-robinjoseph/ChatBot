@@ -1,0 +1,5 @@
+Admission Open|Browse to www.google.com
+All Courses|BCA,BSW,MBA
+Hostel|Browse to www.google.in
+Campuses|Browse to www.google.uk
+Application Status|Browse to www.google.ca
